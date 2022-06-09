@@ -38,13 +38,20 @@ body {
 }
 .user div p {
   font-size: 15px;
+  text-transform: capitalize;
+}
+#email {
+  text-transform: lowercase;
 }
 .user .upper-profile {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   text-align: start;
+}
+.user .upper-profile #img {
+  border-radius: 50%;
 }
 .user .lower-profile {
   margin-top: 20px;
