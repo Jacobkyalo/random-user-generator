@@ -1,8 +1,3 @@
-// const generateBtn = document.getElementById("btn");
-// generateBtn.addEventListener("click", () => {
-//   console.log("hello there");
-// });
-
 //fetch users data from api
 
 async function fetchUsers() {
@@ -15,36 +10,39 @@ async function fetchUsers() {
   }
 }
 
-(async function displayFetchedUsersToUI() {
+async function displayFetchedUsersToUI() {
   let randomUsers = await fetchUsers();
   let uiMarkUp = "";
 
   let htmlMarkUp = `<div class="user">
                 <div class="upper-profile">
                   <img
-                    src="https://randomuser.me/api/portraits/men/75.jpg"
+                    src="${randomUsers.results[0].picture.large}"
                     alt="user-img"
                     id="img"
                   />
-                  <div>
+                  <div class="about">
                     <h5 id="name">${randomUsers.results[0].name.title} ${randomUsers.results[0].name.first} ${randomUsers.results[0].name.last}</h5>
-                    <p id="gender">Gender | ${randomUsers.results[0].gender}</p>
-                    <p id="user-name">Username: ${randomUsers.results[0].login.username}</p>
+                    <p id="gender"><span>Gender</span> | ${randomUsers.results[0].gender}</p>
+                    <p id="user-name"><span>Username:</span> ${randomUsers.results[0].login.username}</p>
                     <p id="email">${randomUsers.results[0].email}</p>
                   </div>
                 </div>
                 <div class="lower-profile">
-                  <p id="location">City: ${randomUsers.results[0].location.city}</p>
-                  <p id="password">Password: ${randomUsers.results[0].login.password}</p>
-                  <p id="dob">DOB: ${randomUsers.results[0].dob.date}</p>
-                  <p id="age">AGE: ${randomUsers.results[0].dob.age}</p>
-                  <p id="phone">Phone: ${randomUsers.results[0].phone}</p>
+                  <p id="location"><span>City:</span> ${randomUsers.results[0].location.city}</p>
+                  <p id="location"><span>State:</span> ${randomUsers.results[0].location.state}</p>
+                  <p id="location"><span>Country:</span> ${randomUsers.results[0].location.country}</p>
+                  <p id="password"><span>Password:</span> ${randomUsers.results[0].login.password}</p>
+                  <p id="dob"><span>DOM:</span> ${randomUsers.results[0].dob.date}</p>
+                  <p id="age"><span>Age:</span> ${randomUsers.results[0].dob.age}</p>
+                  <p id="phone"><span>Phone:</span> ${randomUsers.results[0].phone}</p>
                 </div>
-                <div>
-                  <button type="button" id="btn">Generate User</button>
-                </div>
+                
   </div>`;
 
   uiMarkUp += htmlMarkUp;
   document.querySelector(".container").innerHTML = uiMarkUp;
-})();
+}
+
+const generateBtn = document.getElementById("btn");
+generateBtn.addEventListener("click", displayFetchedUsersToUI);
