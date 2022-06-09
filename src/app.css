@@ -43,6 +43,7 @@ span {
   text-align: center;
   margin-top: 30px;
   transition: all 0.5s ease-in-out;
+  max-width: 400px;
 }
 .user * {
   margin: 0;
@@ -71,6 +72,7 @@ span {
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 5px;
   text-align: start;
 }
 .user .lower-profile #dob {
@@ -87,7 +89,7 @@ span {
   color: var(--text-color);
   padding: 20px;
   font-size: 18px;
-  width: 29%;
+  width: 25%;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }

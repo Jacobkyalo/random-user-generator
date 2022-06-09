@@ -25,7 +25,7 @@ async function displayFetchedUsersToUI() {
                     <h5 id="name">${randomUsers.results[0].name.title} ${randomUsers.results[0].name.first} ${randomUsers.results[0].name.last}</h5>
                     <p id="gender"><span>Gender</span> | ${randomUsers.results[0].gender}</p>
                     <p id="user-name"><span>Username:</span> ${randomUsers.results[0].login.username}</p>
-                    <p id="email">${randomUsers.results[0].email}</p>
+                    <p id="email"><span style="text-transform:capitalize">Email:</span> ${randomUsers.results[0].email}</p>
                   </div>
                 </div>
                 <div class="lower-profile">
