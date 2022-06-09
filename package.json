@@ -4,9 +4,13 @@
   "description": "A Random User Generator App consuming randomuser api",
   "main": "js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --open=/src/index.html"
   },
   "keywords": [],
   "author": "Jacob",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }
